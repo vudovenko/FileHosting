@@ -31,7 +31,7 @@ public class TelegramBot extends TelegramLongPollingBot {
     @Override
     public void onUpdateReceived(Update update) {
         var originalMessage = update.getMessage();
-        log.debug(originalMessage.getText()); //TODO почему-то не логируется при debug...
+        log.debug(originalMessage.getText());
         log.info(originalMessage.getText());
 
         var response = new SendMessage();
