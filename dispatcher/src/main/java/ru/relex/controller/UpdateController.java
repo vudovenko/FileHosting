@@ -92,7 +92,7 @@ public class UpdateController {
         setView(sendMessage);
     }
 
-    private void setView(SendMessage sendMessage) {
+    public void setView(SendMessage sendMessage) {
         telegramBot.sendAnswerMessage(sendMessage);
     }
 }
