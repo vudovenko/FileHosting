@@ -4,20 +4,19 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="cf9dd544-c990-4fd0-9240-bc93da07ad37" name="Changes" comment="created UpdateController.java">
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/common-rabbitmq/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/common-rabbitmq/src/main/java/ru/relex/model/RabbitQueue.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dispatcher/src/main/java/ru/relex/controller/UpdateController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dispatcher/src/main/java/ru/relex/service/AnswerConsumer.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dispatcher/src/main/java/ru/relex/service/UpdateProducer.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dispatcher/src/main/java/ru/relex/service/impl/UpdateProducerImpl.java" afterDir="false" />
+    <list default="true" id="cf9dd544-c990-4fd0-9240-bc93da07ad37" name="Changes" comment="creating a Node microservice and reading messages from RabbitMQ">
+      <change afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Node/src/main/java/ru/relex/dao/RawDataDAO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Node/src/main/java/ru/relex/entity/RawData.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Node/src/main/java/ru/relex/service/MainService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Node/src/main/java/ru/relex/service/impl/MainServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dispatcher/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/dispatcher/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dispatcher/src/main/java/ru/relex/controller/TelegramBot.java" beforeDir="false" afterPath="$PROJECT_DIR$/dispatcher/src/main/java/ru/relex/controller/TelegramBot.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Node/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Node/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Node/src/main/java/ru/relex/service/impl/ConsumerServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/Node/src/main/java/ru/relex/service/impl/ConsumerServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Node/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/Node/src/main/resources/application.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/dispatcher/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/dispatcher/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -33,17 +32,15 @@
     </option>
   </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="master" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
-  </component>
-  <component name="MavenImportPreferences">
-    <option name="importingSettings">
-      <MavenImportingSettings>
-        <option name="workspaceImportEnabled" value="true" />
-      </MavenImportingSettings>
-    </option>
   </component>
   <component name="ProblemsViewState">
     <option name="selectedTabId" value="ProjectErrors" />
@@ -64,8 +61,9 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "WebServerToolWindowFactoryState": "false",
+    "ignore.virus.scanning.warn.message": "true",
     "jdk.selected.JAVA_MODULE": "11 (2)",
-    "last_opened_file_path": "C:/Users/vladi/IdeaProjects/FileHosting",
+    "last_opened_file_path": "C:/Users/vladi/IdeaProjects/FileHosting/Node/src/main/java/ru/relex",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -75,11 +73,32 @@
     "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.2",
     "settings.editor.selected.configurable": "preferences.pluginManager",
-    "spring.configuration.checksum": "88d80b2cd970564d2ff87ae63dc2ba13",
+    "spring.configuration.checksum": "c7374aa28e8554b690b537e3485a270f",
     "vue.rearranger.settings.migration": "true"
+  },
+  "keyToStringList": {
+    "DatabaseDriversLRU": [
+      "postgresql"
+    ]
   }
 }]]></component>
-  <component name="RunManager">
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\vladi\IdeaProjects\FileHosting\Node\src\main\java\ru\relex" />
+      <recent name="C:\Users\vladi\IdeaProjects\FileHosting\Node\src\main\resources" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="ru.relex" />
+    </key>
+  </component>
+  <component name="RunDashboard">
+    <option name="configurationTypes">
+      <set>
+        <option value="SpringBootApplicationConfigurationType" />
+      </set>
+    </option>
+  </component>
+  <component name="RunManager" selected="Spring Boot.NodeApplication">
     <configuration name="DispatcherApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
       <module name="dispatcher" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="ru.relex.DispatcherApplication" />
@@ -93,8 +112,22 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="NodeApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
+      <module name="Node" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="ru.relex.NodeApplication" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="ru.relex.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Spring Boot.NodeApplication" />
         <item itemvalue="Spring Boot.DispatcherApplication" />
       </list>
     </recent_temporary>
@@ -111,6 +144,9 @@
       <workItem from="1679071513645" duration="6184000" />
       <workItem from="1679119310813" duration="1134000" />
       <workItem from="1679120463013" duration="18255000" />
+      <workItem from="1695565001576" duration="7866000" />
+      <workItem from="1695579953729" duration="776000" />
+      <workItem from="1695638831600" duration="9394000" />
     </task>
     <task id="LOCAL-00001" summary="git init">
       <created>1679065430597</created>
@@ -154,7 +190,23 @@
       <option name="project" value="LOCAL" />
       <updated>1679142597872</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="creating a Node microservice and reading messages from RabbitMQ">
+      <option name="closed" value="true" />
+      <created>1695571057129</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1695571057129</updated>
+    </task>
+    <task id="LOCAL-00008" summary="creating a Node microservice and reading messages from RabbitMQ">
+      <option name="closed" value="true" />
+      <created>1695571091386</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1695571091386</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -179,7 +231,8 @@
     <MESSAGE value="ref" />
     <MESSAGE value="created MessageUtils.java" />
     <MESSAGE value="created UpdateController.java" />
-    <option name="LAST_COMMIT_MESSAGE" value="created UpdateController.java" />
+    <MESSAGE value="creating a Node microservice and reading messages from RabbitMQ" />
+    <option name="LAST_COMMIT_MESSAGE" value="creating a Node microservice and reading messages from RabbitMQ" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -188,6 +241,61 @@
           <url>file://$PROJECT_DIR$/dispatcher/src/main/java/ru/relex/controller/TelegramBot.java</url>
           <line>45</line>
           <option name="timeStamp" value="5" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/Node/src/main/java/ru/relex/service/impl/ConsumerServiceImpl.java</url>
+          <line>31</line>
+          <option name="timeStamp" value="6" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/dispatcher/src/main/java/ru/relex/service/impl/AnswerConsumerImpl.java</url>
+          <line>24</line>
+          <option name="timeStamp" value="7" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/dispatcher/src/main/java/ru/relex/controller/UpdateController.java</url>
+          <line>57</line>
+          <option name="timeStamp" value="8" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/dispatcher/src/main/java/ru/relex/service/impl/UpdateProducerImpl.java</url>
+          <line>22</line>
+          <option name="timeStamp" value="9" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/Node/src/main/java/ru/relex/service/impl/ProducerServiceImpl.java</url>
+          <line>22</line>
+          <option name="timeStamp" value="10" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/Node/src/main/java/ru/relex/service/impl/MainServiceImpl.java</url>
+          <line>23</line>
+          <option name="timeStamp" value="11" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/dispatcher/src/main/java/ru/relex/controller/UpdateController.java</url>
+          <line>78</line>
+          <option name="timeStamp" value="12" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/dispatcher/src/main/java/ru/relex/controller/UpdateController.java</url>
+          <line>73</line>
+          <option name="timeStamp" value="13" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/dispatcher/src/main/java/ru/relex/controller/UpdateController.java</url>
+          <line>69</line>
+          <option name="timeStamp" value="14" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/dispatcher/src/main/java/ru/relex/controller/UpdateController.java</url>
+          <line>95</line>
+          <option name="timeStamp" value="15" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/dispatcher/src/main/java/ru/relex/controller/TelegramBot.java</url>
+          <line>49</line>
+          <option name="timeStamp" value="16" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

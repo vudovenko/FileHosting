@@ -4,11 +4,9 @@ import lombok.extern.log4j.Log4j;
 import org.springframework.amqp.rabbit.annotation.RabbitListener;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import org.telegram.telegrambots.meta.api.methods.send.SendMessage;
-import org.telegram.telegrambots.meta.api.objects.Message;
 import org.telegram.telegrambots.meta.api.objects.Update;
 import ru.relex.service.ConsumerService;
-import ru.relex.service.ProducerService;
+import ru.relex.service.MainService;
 
 import static ru.relex.model.RabbitQueue.*;
 
@@ -16,11 +14,11 @@ import static ru.relex.model.RabbitQueue.*;
 @Log4j
 public class ConsumerServiceImpl implements ConsumerService {
 
-    private final ProducerService producerService;
+    private final MainService mainService;
 
     @Autowired
-    public ConsumerServiceImpl(ProducerService producerService) {
-        this.producerService = producerService;
+    public ConsumerServiceImpl(MainService mainService) {
+        this.mainService = mainService;
     }
 
     // Над каждой очередью навешивается @RabbitListener с указанием очереди в RabbitMQ,
@@ -29,13 +27,7 @@ public class ConsumerServiceImpl implements ConsumerService {
     @RabbitListener(queues = TEXT_MESSAGE_UPDATE)
     public void consumeTextMessageUpdates(Update update) {
         log.debug("NODE: Text message is received: " + update.getMessage().getText());
-
-        Message message = update.getMessage();
-        SendMessage sendMessage = new SendMessage();
-        sendMessage.setChatId(message.getChatId().toString());
-        sendMessage.setText("Hello from NODE!" +
-                "\nYour message: " + message.getText());
-        producerService.producerAnswer(sendMessage);
+        mainService.processTextMessage(update);
     }
 
     @Override
