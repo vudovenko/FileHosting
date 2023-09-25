@@ -4,18 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="cf9dd544-c990-4fd0-9240-bc93da07ad37" name="Changes" comment="creating a Node microservice and reading messages from RabbitMQ">
-      <change afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Node/src/main/java/ru/relex/dao/RawDataDAO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Node/src/main/java/ru/relex/entity/RawData.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Node/src/main/java/ru/relex/service/MainService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Node/src/main/java/ru/relex/service/impl/MainServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+    <list default="true" id="cf9dd544-c990-4fd0-9240-bc93da07ad37" name="Changes" comment="connecting the microservice to PostgreSQL using Spring Data JPA">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Node/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Node/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Node/src/main/java/ru/relex/service/impl/ConsumerServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/Node/src/main/java/ru/relex/service/impl/ConsumerServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Node/src/main/java/ru/relex/dao/RawDataDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/Node/src/main/java/ru/relex/repository/RawDataRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Node/src/main/java/ru/relex/entity/RawData.java" beforeDir="false" afterPath="$PROJECT_DIR$/Node/src/main/java/ru/relex/entity/RawData.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Node/src/main/java/ru/relex/service/impl/MainServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/Node/src/main/java/ru/relex/service/impl/MainServiceImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Node/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/Node/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dispatcher/src/main/java/ru/relex/controller/UpdateController.java" beforeDir="false" afterPath="$PROJECT_DIR$/dispatcher/src/main/java/ru/relex/controller/UpdateController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/dispatcher/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/dispatcher/src/main/resources/application.properties" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -69,10 +64,10 @@
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "Modules",
+    "project.structure.last.edited": "Artifacts",
     "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.2",
-    "settings.editor.selected.configurable": "preferences.pluginManager",
+    "settings.editor.selected.configurable": "configurable.group.build",
     "spring.configuration.checksum": "c7374aa28e8554b690b537e3485a270f",
     "vue.rearranger.settings.migration": "true"
   },
@@ -146,7 +141,7 @@
       <workItem from="1679120463013" duration="18255000" />
       <workItem from="1695565001576" duration="7866000" />
       <workItem from="1695579953729" duration="776000" />
-      <workItem from="1695638831600" duration="9394000" />
+      <workItem from="1695638831600" duration="11802000" />
     </task>
     <task id="LOCAL-00001" summary="git init">
       <created>1679065430597</created>
@@ -206,7 +201,31 @@
       <option name="project" value="LOCAL" />
       <updated>1695571091386</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="connecting the microservice to PostgreSQL using Spring Data JPA">
+      <option name="closed" value="true" />
+      <created>1695650235023</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1695650235023</updated>
+    </task>
+    <task id="LOCAL-00010" summary="connecting the microservice to PostgreSQL using Spring Data JPA">
+      <option name="closed" value="true" />
+      <created>1695650289854</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1695650289854</updated>
+    </task>
+    <task id="LOCAL-00011" summary="connecting the microservice to PostgreSQL using Spring Data JPA">
+      <option name="closed" value="true" />
+      <created>1695650327727</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1695650327727</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -232,7 +251,8 @@
     <MESSAGE value="created MessageUtils.java" />
     <MESSAGE value="created UpdateController.java" />
     <MESSAGE value="creating a Node microservice and reading messages from RabbitMQ" />
-    <option name="LAST_COMMIT_MESSAGE" value="creating a Node microservice and reading messages from RabbitMQ" />
+    <MESSAGE value="connecting the microservice to PostgreSQL using Spring Data JPA" />
+    <option name="LAST_COMMIT_MESSAGE" value="connecting the microservice to PostgreSQL using Spring Data JPA" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -244,7 +264,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/Node/src/main/java/ru/relex/service/impl/ConsumerServiceImpl.java</url>
-          <line>31</line>
+          <line>28</line>
           <option name="timeStamp" value="6" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
