@@ -1,21 +1,25 @@
 package ru.relex.service.impl;
 
+import lombok.extern.log4j.Log4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.telegram.telegrambots.meta.api.methods.send.SendMessage;
-import org.telegram.telegrambots.meta.api.objects.Message;
 import org.telegram.telegrambots.meta.api.objects.Update;
 import org.telegram.telegrambots.meta.api.objects.User;
 import ru.relex.entity.AppUser;
+import ru.relex.entity.RawData;
+import ru.relex.entity.enums.UserState;
 import ru.relex.repository.AppUserRepository;
 import ru.relex.repository.RawDataRepository;
-import ru.relex.entity.RawData;
 import ru.relex.service.MainService;
 import ru.relex.service.ProducerService;
 
 import static ru.relex.entity.enums.UserState.BASIC_STATE;
+import static ru.relex.entity.enums.UserState.WAIT_FOR_EMAIL_STATE;
+import static ru.relex.service.enums.ServiceCommands.*;
 
 @Service
+@Log4j
 public class MainServiceImpl implements MainService {
     private final RawDataRepository rawDataRepository;
     private final ProducerService producerService;
@@ -33,19 +37,35 @@ public class MainServiceImpl implements MainService {
     @Override
     public void processTextMessage(Update update) {
         saveRawData(update);
-        Message textMessage = update.getMessage();
-        User telegramUser = textMessage.getFrom();
-        AppUser appUser = findOrSaveAppUser(telegramUser);
+        AppUser appUser = findOrSaveAppUser(update);
+        UserState userState = appUser.getState();
+        String text = update.getMessage().getText();
+        String output = "";
 
-        Message message = update.getMessage();
-        SendMessage sendMessage = new SendMessage();
-        sendMessage.setChatId(message.getChatId().toString());
-        sendMessage.setText("Hello from NODE!" +
-                "\nYour message: " + message.getText());
-        producerService.producerAnswer(sendMessage);
+        if (CANCEL.equals(text)) {
+            output = cancelProcess(appUser);
+        } else if (BASIC_STATE.equals(userState)) {
+            output = processServiceCommand(appUser, text);
+        } else if (WAIT_FOR_EMAIL_STATE.equals(userState)) {
+            //TODO добавить обработку емейла
+        } else {
+            log.error("Unknown user state: " + userState);
+            output = "Неизвестная ошибка! Введите /cancel и попробуйте снова!";
+        }
+
+        Long chatId = update.getMessage().getChatId();
+        sendAnswer(output, chatId);
     }
 
-    private AppUser findOrSaveAppUser(User telegramUser) {
+    private void saveRawData(Update update) {
+        RawData rawData = RawData.builder()
+                .event(update)
+                .build();
+        rawDataRepository.save(rawData);
+    }
+
+    private AppUser findOrSaveAppUser(Update update) {
+        User telegramUser = update.getMessage().getFrom();
         AppUser persistentAppUser = appUserRepository.findAppUserByTelegramUserId(telegramUser.getId());
         if (persistentAppUser == null) {
             AppUser transientAppUser = AppUser.builder()
@@ -62,11 +82,79 @@ public class MainServiceImpl implements MainService {
         return persistentAppUser;
     }
 
-    private void saveRawData(Update update) {
-        RawData rawData = RawData.builder()
-                .event(update)
-                .build();
-        rawDataRepository.save(rawData);
+    private String cancelProcess(AppUser appUser) {
+        appUser.setState(BASIC_STATE);
+        appUserRepository.save(appUser);
+        return "Команда отменена!";
     }
 
+    private String processServiceCommand(AppUser appUser, String cmd) {
+        if (REGISTRATION.equals(cmd)) {
+            //TODO добавить регистрацию
+            return "Временно недоступно.";
+        } else if (HELP.equals(cmd)) {
+            return help();
+        } else if (START.equals(cmd)) {
+            return "Приветствую! Чтобы посмотреть список доступных команд введите /help";
+        } else {
+            return "Неизвестная команда! Чтобы посмотреть список доступных команд введите /help";
+        }
+    }
+
+    private String help() {
+        return "Список доступных команд:\n"
+                + "/cancel - отмена выполнения текущей команды;\n"
+                + "/registration - регистрация пользователя.";
+    }
+
+
+    private void sendAnswer(String output, Long chatId) {
+        SendMessage sendMessage = new SendMessage();
+        sendMessage.setChatId(chatId);
+        sendMessage.setText(output);
+        producerService.producerAnswer(sendMessage);
+    }
+
+    @Override
+    public void processDocMessage(Update update) {
+        saveRawData(update);
+        AppUser appUser = findOrSaveAppUser(update);
+        Long chatId = update.getMessage().getChatId();
+
+        if (isNotAllowToSendContent(chatId, appUser)) {
+            return;
+        }
+
+        //TODO добавить сохранения документа :)
+        String answer = "Документ успешно загружен! Ссылка для скачивания: http://test.ru/get-doc/777";
+        sendAnswer(answer, chatId);
+    }
+
+    private boolean isNotAllowToSendContent(Long chatId, AppUser appUser) {
+        UserState userState = appUser.getState();
+        if (!appUser.getIsActive()) {
+            String error = "Зарегистрируйтесь или активируйте свою учетную запись для загрузки контента.";
+            sendAnswer(error, chatId);
+            return true;
+        } else if (!BASIC_STATE.equals(userState)) {
+            String error = "Отмените текущую команду с помощью /cancel для отправки файлов.";
+            sendAnswer(error, chatId);
+            return true;
+        }
+        return false;
+    }
+
+    @Override
+    public void processPhotoMessage(Update update) {
+        saveRawData(update);
+        AppUser appUser = findOrSaveAppUser(update);
+        Long chatId = update.getMessage().getChatId();
+        if (isNotAllowToSendContent(chatId, appUser)) {
+            return;
+        }
+
+        //TODO добавить сохранения фото :)
+        String answer = "Фото успешно загружено! Ссылка для скачивания: http://test.ru/get-photo/777";
+        sendAnswer(answer, chatId);
+    }
 }
