@@ -35,7 +35,6 @@ public class ConsumerServiceImpl implements ConsumerService {
     public void consumeDocMessageUpdates(Update update) {
         log.debug("NODE: Doc message is received");
         mainService.processDocMessage(update);
-
     }
 
     @Override

@@ -1,22 +1,27 @@
 package ru.relex.service.enums;
 
-public enum ServiceCommands {
+public enum ServiceCommands{
     HELP("/help"),
     REGISTRATION("/registration"),
     CANCEL("/cancel"),
     START("/start");
-    private final String cmd;
+    private final String value;
 
-    ServiceCommands(String cmd) {
-        this.cmd = cmd;
+    ServiceCommands(String value) {
+        this.value = value;
     }
 
     @Override
     public String toString() {
-        return cmd;
+        return value;
     }
 
-    public boolean equals(String cmd) {
-        return this.toString().equals(cmd);
+    public static ServiceCommands fromValue(String command) {
+        for (ServiceCommands enumCommand: ServiceCommands.values()) {
+            if (enumCommand.value.equals(command)) {
+                return enumCommand;
+            }
+        }
+        return null;
     }
 }
