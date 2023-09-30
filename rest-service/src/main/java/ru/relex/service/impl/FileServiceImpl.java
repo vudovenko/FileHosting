@@ -12,6 +12,7 @@ import ru.relex.entity.BinaryContent;
 import ru.relex.repository.AppDocumentRepository;
 import ru.relex.repository.AppPhotoRepository;
 import ru.relex.service.FileService;
+import ru.relex.utils.CryptoTool;
 
 import java.io.File;
 import java.io.IOException;
@@ -24,24 +25,32 @@ import java.io.IOException;
 public class FileServiceImpl implements FileService {
     private final AppDocumentRepository appDocumentRepository;
     private final AppPhotoRepository appPhotoRepository;
+    private final CryptoTool cryptoTool;
 
     @Autowired
-    public FileServiceImpl(AppDocumentRepository appDocumentRepository, AppPhotoRepository appPhotoRepository) {
+    public FileServiceImpl(AppDocumentRepository appDocumentRepository,
+                           AppPhotoRepository appPhotoRepository,
+                           CryptoTool cryptoTool) {
         this.appDocumentRepository = appDocumentRepository;
         this.appPhotoRepository = appPhotoRepository;
+        this.cryptoTool = cryptoTool;
     }
 
     @Override
-    public AppDocument getDocument(String docId) {
-        //TODO добавить дешифрование хеш-строки
-        Long id = Long.parseLong(docId);
+    public AppDocument getDocument(String hash) {
+        var id = cryptoTool.idOf(hash);
+        if (id == null) {
+            return null;
+        }
         return appDocumentRepository.findById(id).orElse(null);
     }
 
     @Override
-    public AppPhoto getPhoto(String photoId) {
-        //TODO добавить дешифрование хеш-строки
-        Long id = Long.parseLong(photoId);
+    public AppPhoto getPhoto(String hash) {
+        var id = cryptoTool.idOf(hash);
+        if (id == null) {
+            return null;
+        }
         return appPhotoRepository.findById(id).orElse(null);
     }
 

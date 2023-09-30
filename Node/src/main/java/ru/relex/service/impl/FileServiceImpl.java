@@ -18,6 +18,8 @@ import ru.relex.repository.AppDocumentRepository;
 import ru.relex.repository.AppPhotoRepository;
 import ru.relex.repository.BinaryContentRepository;
 import ru.relex.service.FileService;
+import ru.relex.service.enums.LinkType;
+import ru.relex.utils.CryptoTool;
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -36,17 +38,22 @@ public class FileServiceImpl implements FileService {
     private String fileInfoUri;
     @Value("${service.file_storage.uri}")
     private String fileStorageUri;
+    @Value("${link.address}")
+    private String linkAddress;
     private final AppDocumentRepository appDocumentRepository;
     private final AppPhotoRepository appPhotoRepository;
     private final BinaryContentRepository binaryContentRepository;
+    private final CryptoTool cryptoTool;
 
     @Autowired
     public FileServiceImpl(AppDocumentRepository appDocumentRepository,
                            AppPhotoRepository appPhotoRepository,
-                           BinaryContentRepository binaryContentRepository) {
+                           BinaryContentRepository binaryContentRepository,
+                           CryptoTool cryptoTool) {
         this.appDocumentRepository = appDocumentRepository;
         this.appPhotoRepository = appPhotoRepository;
         this.binaryContentRepository = binaryContentRepository;
+        this.cryptoTool = cryptoTool;
     }
 
     @Override
@@ -157,5 +164,11 @@ public class FileServiceImpl implements FileService {
                 .binaryContent(persistentBinaryContent)
                 .fileSize(telegramPhoto.getFileSize())
                 .build();
+    }
+
+    @Override
+    public String generateLink(Long docId, LinkType linkType) {
+        var hash = cryptoTool.hashOf(docId);
+        return "http://" + linkAddress + "/" + linkType + "?id=" + hash;
     }
 }
