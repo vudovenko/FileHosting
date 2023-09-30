@@ -65,9 +65,12 @@ public class FileServiceImpl implements FileService {
 
     @Override
     public AppPhoto processPhoto(Message telegramMessage) {
-        // TODO пока что обрабатываем только одно фото в сообщении
-        // объект фото в тг библиотеке. Их может быть несколько
-        PhotoSize telegramPhoto = telegramMessage.getPhoto().get(0);
+        // Телеграм позволяет скачать фота в нескольких разрешениях.
+        // PhotoSize хранит список мета-информации одного и того же фото, но различного размера.
+        // Самое первое в списке фото - самое маленькое.
+        int photoSizeCount = telegramMessage.getPhoto().size();
+        int photoIndex = photoSizeCount > 1 ? telegramMessage.getPhoto().size() - 1 : 0;
+        PhotoSize telegramPhoto = telegramMessage.getPhoto().get(photoIndex);
         String fileId = telegramPhoto.getFileId();
         ResponseEntity<String> response = getFilePath(fileId);
         if (response.getStatusCode() == HttpStatus.OK) {
@@ -118,13 +121,12 @@ public class FileServiceImpl implements FileService {
     /**
      * Скачивает файл по ссылке в виде массива байт
      *
-     * @param filePath
      * @return массив байт файла
      */
     private byte[] downloadFile(String filePath) {
         String fullUri = fileStorageUri.replace("{token}", token)
                 .replace("{filePath}", filePath);
-        URL urlObj = null;
+        URL urlObj;
         try {
             urlObj = new URL(fullUri);
         } catch (MalformedURLException e) {

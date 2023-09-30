@@ -16,6 +16,9 @@ import ru.relex.service.FileService;
 import java.io.File;
 import java.io.IOException;
 
+/**
+ * Отечает за получение файлов из БД
+ */
 @Log4j
 @Service
 public class FileServiceImpl implements FileService {
@@ -45,8 +48,6 @@ public class FileServiceImpl implements FileService {
     /**
      * Преобразовывает массив байт из БД в объект класса FileSystemResource,
      * который можно отправить в теле ответа пользователю.
-     *
-     * @param binaryContent
      */
     @Override
     public FileSystemResource getFileSystemResource(BinaryContent binaryContent) {
