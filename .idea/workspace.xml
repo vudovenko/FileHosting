@@ -4,14 +4,16 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="cf9dd544-c990-4fd0-9240-bc93da07ad37" name="Changes" comment="download the files from telegram and save them to the database">
-      <change afterPath="$PROJECT_DIR$/common-jpa/src/main/java/ru/relex/entity/AppPhoto.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/common-jpa/src/main/java/ru/relex/repository/AppPhotoRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+    <list default="true" id="cf9dd544-c990-4fd0-9240-bc93da07ad37" name="Changes" comment="download the photo from telegram and save it to the database + refactoring">
+      <change afterPath="$PROJECT_DIR$/rest-service/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/rest-service/src/main/java/ru/relex/RestService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/rest-service/src/main/java/ru/relex/controller/FileController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/rest-service/src/main/java/ru/relex/service/FileService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/rest-service/src/main/java/ru/relex/service/impl/FileServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/rest-service/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Node/src/main/java/ru/relex/service/FileService.java" beforeDir="false" afterPath="$PROJECT_DIR$/Node/src/main/java/ru/relex/service/FileService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Node/src/main/java/ru/relex/service/impl/FileServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/Node/src/main/java/ru/relex/service/impl/FileServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Node/src/main/java/ru/relex/service/impl/MainServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/Node/src/main/java/ru/relex/service/impl/MainServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -75,7 +77,7 @@
     "git-widget-placeholder": "dev",
     "ignore.virus.scanning.warn.message": "true",
     "jdk.selected.JAVA_MODULE": "11 (2)",
-    "last_opened_file_path": "C:/Users/vladi/IdeaProjects/untitled",
+    "last_opened_file_path": "C:/Users/vladi/IdeaProjects/FileHosting/rest-service/src/main/resources",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -84,7 +86,7 @@
     "project.structure.last.edited": "Artifacts",
     "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.2",
-    "settings.editor.selected.configurable": "preferences.pluginManager",
+    "settings.editor.selected.configurable": "File.Encoding",
     "spring.configuration.checksum": "fb00bcc5c4fab6ecb9f3ce903a7cc313",
     "vue.rearranger.settings.migration": "true"
   },
@@ -96,6 +98,7 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\vladi\IdeaProjects\FileHosting\rest-service\src\main\resources" />
       <recent name="C:\Users\vladi\IdeaProjects\FileHosting\Node\src\main\java\ru\relex" />
       <recent name="C:\Users\vladi\IdeaProjects\FileHosting\Node\src\main\resources" />
     </key>
@@ -111,7 +114,7 @@
       </set>
     </option>
   </component>
-  <component name="RunManager" selected="Spring Boot.NodeApplication">
+  <component name="RunManager" selected="Spring Boot.RestService">
     <configuration name="DispatcherApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
       <module name="dispatcher" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="ru.relex.DispatcherApplication" />
@@ -138,8 +141,22 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="RestService" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
+      <module name="rest-service" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="ru.relex.RestService" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="ru.relex.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Spring Boot.RestService" />
         <item itemvalue="Spring Boot.NodeApplication" />
         <item itemvalue="Spring Boot.DispatcherApplication" />
       </list>
@@ -175,7 +192,8 @@
       <workItem from="1696071860155" duration="614000" />
       <workItem from="1696088583939" duration="85000" />
       <workItem from="1696088711450" duration="333000" />
-      <workItem from="1696089756122" duration="3477000" />
+      <workItem from="1696089756122" duration="4969000" />
+      <workItem from="1696096133401" duration="3227000" />
     </task>
     <task id="LOCAL-00001" summary="git init">
       <created>1679065430597</created>
@@ -299,7 +317,15 @@
       <option name="project" value="LOCAL" />
       <updated>1695985448091</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="download the photo from telegram and save it to the database + refactoring">
+      <option name="closed" value="true" />
+      <created>1696093286271</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1696093286271</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -330,7 +356,8 @@
     <MESSAGE value="saving users in the Postgres database" />
     <MESSAGE value="adding processing of text commands from the telegram bot chat" />
     <MESSAGE value="download the files from telegram and save them to the database" />
-    <option name="LAST_COMMIT_MESSAGE" value="download the files from telegram and save them to the database" />
+    <MESSAGE value="download the photo from telegram and save it to the database + refactoring" />
+    <option name="LAST_COMMIT_MESSAGE" value="download the photo from telegram and save it to the database + refactoring" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
