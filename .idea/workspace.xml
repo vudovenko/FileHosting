@@ -4,20 +4,16 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="cf9dd544-c990-4fd0-9240-bc93da07ad37" name="Changes" comment="created UpdateController.java">
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/common-rabbitmq/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/common-rabbitmq/src/main/java/ru/relex/model/RabbitQueue.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dispatcher/src/main/java/ru/relex/controller/UpdateController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dispatcher/src/main/java/ru/relex/service/AnswerConsumer.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dispatcher/src/main/java/ru/relex/service/UpdateProducer.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dispatcher/src/main/java/ru/relex/service/impl/UpdateProducerImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+    <list default="true" id="cf9dd544-c990-4fd0-9240-bc93da07ad37" name="Changes" comment="ref">
+      <change afterPath="$PROJECT_DIR$/dispatcher/src/main/java/ru/relex/controller/WebHookController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dispatcher/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/dispatcher/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Node/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/Node/src/main/resources/application.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/dispatcher/src/main/java/ru/relex/controller/TelegramBot.java" beforeDir="false" afterPath="$PROJECT_DIR$/dispatcher/src/main/java/ru/relex/controller/TelegramBot.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dispatcher/src/main/java/ru/relex/controller/UpdateController.java" beforeDir="false" afterPath="$PROJECT_DIR$/dispatcher/src/main/java/ru/relex/controller/UpdateProcessor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dispatcher/src/main/java/ru/relex/service/impl/AnswerConsumerImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/dispatcher/src/main/java/ru/relex/service/impl/AnswerConsumerImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/dispatcher/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/dispatcher/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mail-service/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/mail-service/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/rest-service/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/rest-service/src/main/resources/application.properties" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -27,59 +23,100 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="Enum" />
         <option value="Interface" />
         <option value="Class" />
       </list>
     </option>
   </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="master" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;
+  }
+}</component>
+  <component name="GithubPullRequestsUISettings">
+    <option name="selectedUrlAndAccountId">
+      <UrlAndAccount>
+        <option name="accountId" value="9b86d8d7-01b4-45f3-9e94-de4721ca107e" />
+        <option name="url" value="https://github.com/vudovenko/FileHosting.git" />
+      </UrlAndAccount>
+    </option>
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
-  <component name="MavenImportPreferences">
-    <option name="importingSettings">
-      <MavenImportingSettings>
-        <option name="workspaceImportEnabled" value="true" />
-      </MavenImportingSettings>
-    </option>
-  </component>
   <component name="ProblemsViewState">
-    <option name="selectedTabId" value="ProjectErrors" />
+    <option name="selectedTabId" value="CurrentFile" />
   </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 0
+}</component>
   <component name="ProjectId" id="2N99PYO2KxZHBC1br1ZidlDiAdl" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RequestMappingsPanelOrder0": "0",
-    "RequestMappingsPanelOrder1": "1",
-    "RequestMappingsPanelWidth0": "75",
-    "RequestMappingsPanelWidth1": "75",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "jdk.selected.JAVA_MODULE": "11 (2)",
-    "last_opened_file_path": "C:/Users/vladi/IdeaProjects/FileHosting",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "Modules",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.2",
-    "settings.editor.selected.configurable": "preferences.pluginManager",
-    "spring.configuration.checksum": "88d80b2cd970564d2ff87ae63dc2ba13",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
+    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
+    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
+    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;dev&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;jdk.selected.JAVA_MODULE&quot;: &quot;11 (2)&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/vladi/IdeaProjects/FileHosting/mail-service/src/main/resources&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;File.Encoding&quot;,
+    &quot;spring.configuration.checksum&quot;: &quot;fb00bcc5c4fab6ecb9f3ce903a7cc313&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  },
+  &quot;keyToStringList&quot;: {
+    &quot;DatabaseDriversLRU&quot;: [
+      &quot;postgresql&quot;
+    ]
   }
-}]]></component>
-  <component name="RunManager">
+}</component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\vladi\IdeaProjects\FileHosting\mail-service\src\main\resources" />
+      <recent name="C:\Users\vladi\IdeaProjects\FileHosting\rest-service\src\main\resources" />
+      <recent name="C:\Users\vladi\IdeaProjects\FileHosting\Node\src\main\java\ru\relex" />
+      <recent name="C:\Users\vladi\IdeaProjects\FileHosting\Node\src\main\resources" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="ru.relex.repository" />
+      <recent name="ru.relex" />
+    </key>
+  </component>
+  <component name="RunDashboard">
+    <option name="configurationTypes">
+      <set>
+        <option value="SpringBootApplicationConfigurationType" />
+      </set>
+    </option>
+  </component>
+  <component name="RunManager" selected="Spring Boot.MailApplication">
     <configuration name="DispatcherApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
       <module name="dispatcher" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="ru.relex.DispatcherApplication" />
@@ -93,8 +130,50 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="MailApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
+      <module name="mail-service" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="ru.relex.MailApplication" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="ru.relex.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="NodeApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
+      <module name="Node" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="ru.relex.NodeApplication" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="ru.relex.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="RestService" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
+      <module name="rest-service" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="ru.relex.RestService" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="ru.relex.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Spring Boot.RestService" />
+        <item itemvalue="Spring Boot.NodeApplication" />
+        <item itemvalue="Spring Boot.MailApplication" />
         <item itemvalue="Spring Boot.DispatcherApplication" />
       </list>
     </recent_temporary>
@@ -111,6 +190,30 @@
       <workItem from="1679071513645" duration="6184000" />
       <workItem from="1679119310813" duration="1134000" />
       <workItem from="1679120463013" duration="18255000" />
+      <workItem from="1695565001576" duration="7866000" />
+      <workItem from="1695579953729" duration="776000" />
+      <workItem from="1695638831600" duration="24530000" />
+      <workItem from="1695706895767" duration="591000" />
+      <workItem from="1695741913144" duration="1212000" />
+      <workItem from="1695748125585" duration="593000" />
+      <workItem from="1695879427874" duration="593000" />
+      <workItem from="1695975198658" duration="8393000" />
+      <workItem from="1696001545194" duration="598000" />
+      <workItem from="1696008564022" duration="559000" />
+      <workItem from="1696050439453" duration="5198000" />
+      <workItem from="1696062261370" duration="1246000" />
+      <workItem from="1696065986139" duration="417000" />
+      <workItem from="1696066428603" duration="547000" />
+      <workItem from="1696067013096" duration="683000" />
+      <workItem from="1696071860155" duration="614000" />
+      <workItem from="1696088583939" duration="85000" />
+      <workItem from="1696088711450" duration="333000" />
+      <workItem from="1696089756122" duration="4969000" />
+      <workItem from="1696096133401" duration="7713000" />
+      <workItem from="1696103941183" duration="795000" />
+      <workItem from="1696104802905" duration="107000" />
+      <workItem from="1696141594577" duration="10390000" />
+      <workItem from="1696161041234" duration="4817000" />
     </task>
     <task id="LOCAL-00001" summary="git init">
       <created>1679065430597</created>
@@ -154,7 +257,215 @@
       <option name="project" value="LOCAL" />
       <updated>1679142597872</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="creating a Node microservice and reading messages from RabbitMQ">
+      <option name="closed" value="true" />
+      <created>1695571057129</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1695571057129</updated>
+    </task>
+    <task id="LOCAL-00008" summary="creating a Node microservice and reading messages from RabbitMQ">
+      <option name="closed" value="true" />
+      <created>1695571091386</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1695571091386</updated>
+    </task>
+    <task id="LOCAL-00009" summary="connecting the microservice to PostgreSQL using Spring Data JPA">
+      <option name="closed" value="true" />
+      <created>1695650235023</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1695650235023</updated>
+    </task>
+    <task id="LOCAL-00010" summary="connecting the microservice to PostgreSQL using Spring Data JPA">
+      <option name="closed" value="true" />
+      <created>1695650289854</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1695650289854</updated>
+    </task>
+    <task id="LOCAL-00011" summary="connecting the microservice to PostgreSQL using Spring Data JPA">
+      <option name="closed" value="true" />
+      <created>1695650327727</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1695650327727</updated>
+    </task>
+    <task id="LOCAL-00012" summary="refactoring;&#10;@Data replaced by &#10;@Getter&#10;@Setter&#10;@EqualsAndHashCode(exclude = &quot;id&quot;),&#10;so that there are no collisions when calculating the Hash code">
+      <option name="closed" value="true" />
+      <created>1695659133083</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1695659133083</updated>
+    </task>
+    <task id="LOCAL-00013" summary="saving users in the Postgres database">
+      <option name="closed" value="true" />
+      <created>1695664031779</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1695664031779</updated>
+    </task>
+    <task id="LOCAL-00014" summary="adding processing of text commands from the telegram bot chat">
+      <option name="closed" value="true" />
+      <created>1695669927813</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1695669927813</updated>
+    </task>
+    <task id="LOCAL-00015" summary="adding processing of text commands from the telegram bot chat">
+      <option name="closed" value="true" />
+      <created>1695670022301</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1695670022301</updated>
+    </task>
+    <task id="LOCAL-00016" summary="download the files from telegram and save them to the database">
+      <option name="closed" value="true" />
+      <created>1695985448091</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1695985448091</updated>
+    </task>
+    <task id="LOCAL-00017" summary="download the photo from telegram and save it to the database + refactoring">
+      <option name="closed" value="true" />
+      <created>1696093286271</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1696093286271</updated>
+    </task>
+    <task id="LOCAL-00018" summary="a rest microservice has been created for downloading files via the link">
+      <option name="closed" value="true" />
+      <created>1696099687009</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1696099687009</updated>
+    </task>
+    <task id="LOCAL-00019" summary="a rest microservice has been created for downloading files via the link">
+      <option name="closed" value="true" />
+      <created>1696099742130</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1696099742130</updated>
+    </task>
+    <task id="LOCAL-00020" summary="a rest microservice has been created for downloading files via the link">
+      <option name="closed" value="true" />
+      <created>1696099812186</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1696099812186</updated>
+    </task>
+    <task id="LOCAL-00021" summary="fixed a bug that returned a photo in a small resolution">
+      <option name="closed" value="true" />
+      <created>1696101048727</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1696101048728</updated>
+    </task>
+    <task id="LOCAL-00022" summary="fixed a bug that returned a photo in a small resolution">
+      <option name="closed" value="true" />
+      <created>1696101149064</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1696101149064</updated>
+    </task>
+    <task id="LOCAL-00023" summary="fixed a bug that returned a photo in a small resolution">
+      <option name="closed" value="true" />
+      <created>1696101191165</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1696101191165</updated>
+    </task>
+    <task id="LOCAL-00024" summary="fixed a bug that returned a photo in a small resolution">
+      <option name="closed" value="true" />
+      <created>1696101309687</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1696101309687</updated>
+    </task>
+    <task id="LOCAL-00025" summary="fixed a bug that returned a photo in a small resolution">
+      <option name="closed" value="true" />
+      <created>1696101337232</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1696101337232</updated>
+    </task>
+    <task id="LOCAL-00026" summary="added generation of links for downloading files from telegram">
+      <option name="closed" value="true" />
+      <created>1696103830959</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1696103830959</updated>
+    </task>
+    <task id="LOCAL-00027" summary="added generation of links for downloading files from telegram">
+      <option name="closed" value="true" />
+      <created>1696103980035</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1696103980035</updated>
+    </task>
+    <task id="LOCAL-00028" summary="added generation of links for downloading files from telegram">
+      <option name="closed" value="true" />
+      <created>1696104578796</created>
+      <option name="number" value="00028" />
+      <option name="presentableId" value="LOCAL-00028" />
+      <option name="project" value="LOCAL" />
+      <updated>1696104578797</updated>
+    </task>
+    <task id="LOCAL-00029" summary="a microservice has been created to send emails from Java code">
+      <option name="closed" value="true" />
+      <created>1696145728345</created>
+      <option name="number" value="00029" />
+      <option name="presentableId" value="LOCAL-00029" />
+      <option name="project" value="LOCAL" />
+      <updated>1696145728346</updated>
+    </task>
+    <task id="LOCAL-00030" summary="added user registration in the app">
+      <option name="closed" value="true" />
+      <created>1696158894317</created>
+      <option name="number" value="00030" />
+      <option name="presentableId" value="LOCAL-00030" />
+      <option name="project" value="LOCAL" />
+      <updated>1696158894317</updated>
+    </task>
+    <task id="LOCAL-00031" summary="added user registration in the app">
+      <option name="closed" value="true" />
+      <created>1696158924477</created>
+      <option name="number" value="00031" />
+      <option name="presentableId" value="LOCAL-00031" />
+      <option name="project" value="LOCAL" />
+      <updated>1696158924477</updated>
+    </task>
+    <task id="LOCAL-00032" summary="ref">
+      <option name="closed" value="true" />
+      <created>1696171737827</created>
+      <option name="number" value="00032" />
+      <option name="presentableId" value="LOCAL-00032" />
+      <option name="project" value="LOCAL" />
+      <updated>1696171737827</updated>
+    </task>
+    <option name="localTasksCounter" value="33" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -176,20 +487,21 @@
     <MESSAGE value="the dispatcher module has been added" />
     <MESSAGE value="Deprecated log4j has been added (to be replaced later)." />
     <MESSAGE value="added the ability to receive messages through the bot and send him a response" />
-    <MESSAGE value="ref" />
     <MESSAGE value="created MessageUtils.java" />
     <MESSAGE value="created UpdateController.java" />
-    <option name="LAST_COMMIT_MESSAGE" value="created UpdateController.java" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/dispatcher/src/main/java/ru/relex/controller/TelegramBot.java</url>
-          <line>45</line>
-          <option name="timeStamp" value="5" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
+    <MESSAGE value="creating a Node microservice and reading messages from RabbitMQ" />
+    <MESSAGE value="connecting the microservice to PostgreSQL using Spring Data JPA" />
+    <MESSAGE value="refactoring;&#10;@Data replaced by &#10;@Getter&#10;@Setter&#10;@EqualsAndHashCode(exclude = &quot;id&quot;),&#10;so that there are no collisions when calculating the Hash code" />
+    <MESSAGE value="saving users in the Postgres database" />
+    <MESSAGE value="adding processing of text commands from the telegram bot chat" />
+    <MESSAGE value="download the files from telegram and save them to the database" />
+    <MESSAGE value="download the photo from telegram and save it to the database + refactoring" />
+    <MESSAGE value="a rest microservice has been created for downloading files via the link" />
+    <MESSAGE value="fixed a bug that returned a photo in a small resolution" />
+    <MESSAGE value="added generation of links for downloading files from telegram" />
+    <MESSAGE value="a microservice has been created to send emails from Java code" />
+    <MESSAGE value="added user registration in the app" />
+    <MESSAGE value="ref" />
+    <option name="LAST_COMMIT_MESSAGE" value="ref" />
   </component>
 </project>
