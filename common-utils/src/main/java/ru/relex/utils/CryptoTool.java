@@ -9,7 +9,7 @@ public class CryptoTool {
     private final Hashids hashids;
 
     public CryptoTool(String salt) {
-        var minHashLength = 10;
+        int minHashLength = 10;
         this.hashids = new Hashids(salt, minHashLength);
     }
 

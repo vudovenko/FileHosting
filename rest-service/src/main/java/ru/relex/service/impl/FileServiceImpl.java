@@ -38,7 +38,7 @@ public class FileServiceImpl implements FileService {
 
     @Override
     public AppDocument getDocument(String hash) {
-        var id = cryptoTool.idOf(hash);
+        Long id = cryptoTool.idOf(hash);
         if (id == null) {
             return null;
         }
@@ -47,7 +47,7 @@ public class FileServiceImpl implements FileService {
 
     @Override
     public AppPhoto getPhoto(String hash) {
-        var id = cryptoTool.idOf(hash);
+        Long id = cryptoTool.idOf(hash);
         if (id == null) {
             return null;
         }

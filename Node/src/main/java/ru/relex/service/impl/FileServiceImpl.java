@@ -168,7 +168,7 @@ public class FileServiceImpl implements FileService {
 
     @Override
     public String generateLink(Long docId, LinkType linkType) {
-        var hash = cryptoTool.hashOf(docId);
+        String hash = cryptoTool.hashOf(docId);
         return "http://" + linkAddress + "/" + linkType + "?id=" + hash;
     }
 }
