@@ -4,20 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="cf9dd544-c990-4fd0-9240-bc93da07ad37" name="Changes" comment="a microservice has been created to send emails from Java code">
-      <change afterPath="$PROJECT_DIR$/Node/src/main/java/ru/relex/service/AppUserService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Node/src/main/java/ru/relex/service/impl/AppUserServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/rest-service/src/main/java/ru/relex/controller/ActivationController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/rest-service/src/main/java/ru/relex/service/UserActivationService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/rest-service/src/main/java/ru/relex/service/impl/UserActivationServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Node/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Node/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Node/src/main/java/ru/relex/service/impl/MainServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/Node/src/main/java/ru/relex/service/impl/MainServiceImpl.java" afterDir="false" />
+    <list default="true" id="cf9dd544-c990-4fd0-9240-bc93da07ad37" name="Changes" comment="added user registration in the app">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Node/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/Node/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/common-jpa/src/main/java/ru/relex/repository/AppUserRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/common-jpa/src/main/java/ru/relex/repository/AppUserRepository.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/dispatcher/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/dispatcher/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mail-service/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/mail-service/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mail-service/src/main/java/ru/relex/dto/MailParams.java" beforeDir="false" afterPath="$PROJECT_DIR$/common-utils/src/main/java/ru/relex/dto/MailParams.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/mail-service/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/mail-service/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/rest-service/src/main/java/ru/relex/controller/FileController.java" beforeDir="false" afterPath="$PROJECT_DIR$/rest-service/src/main/java/ru/relex/controller/FileController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/rest-service/src/main/java/ru/relex/service/FileService.java" beforeDir="false" afterPath="$PROJECT_DIR$/rest-service/src/main/java/ru/relex/service/FileService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/rest-service/src/main/java/ru/relex/service/impl/FileServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/rest-service/src/main/java/ru/relex/service/impl/FileServiceImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/rest-service/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/rest-service/src/main/resources/application.properties" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -70,38 +64,38 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RequestMappingsPanelOrder0": "0",
-    "RequestMappingsPanelOrder1": "1",
-    "RequestMappingsPanelWidth0": "75",
-    "RequestMappingsPanelWidth1": "75",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "git-widget-placeholder": "dev",
-    "ignore.virus.scanning.warn.message": "true",
-    "jdk.selected.JAVA_MODULE": "11 (2)",
-    "last_opened_file_path": "C:/Users/vladi/IdeaProjects/FileHosting/mail-service/src/main/resources",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "Modules",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.2",
-    "settings.editor.selected.configurable": "File.Encoding",
-    "spring.configuration.checksum": "fb00bcc5c4fab6ecb9f3ce903a7cc313",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
+    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
+    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
+    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;dev&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;jdk.selected.JAVA_MODULE&quot;: &quot;11 (2)&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/vladi/IdeaProjects/FileHosting/mail-service/src/main/resources&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;File.Encoding&quot;,
+    &quot;spring.configuration.checksum&quot;: &quot;fb00bcc5c4fab6ecb9f3ce903a7cc313&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   },
-  "keyToStringList": {
-    "DatabaseDriversLRU": [
-      "postgresql"
+  &quot;keyToStringList&quot;: {
+    &quot;DatabaseDriversLRU&quot;: [
+      &quot;postgresql&quot;
     ]
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\vladi\IdeaProjects\FileHosting\mail-service\src\main\resources" />
@@ -176,10 +170,10 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Spring Boot.RestService" />
         <item itemvalue="Spring Boot.NodeApplication" />
-        <item itemvalue="Spring Boot.DispatcherApplication" />
+        <item itemvalue="Spring Boot.RestService" />
         <item itemvalue="Spring Boot.MailApplication" />
+        <item itemvalue="Spring Boot.DispatcherApplication" />
       </list>
     </recent_temporary>
   </component>
@@ -217,7 +211,8 @@
       <workItem from="1696096133401" duration="7713000" />
       <workItem from="1696103941183" duration="795000" />
       <workItem from="1696104802905" duration="107000" />
-      <workItem from="1696141594577" duration="10043000" />
+      <workItem from="1696141594577" duration="10390000" />
+      <workItem from="1696161041234" duration="2117000" />
     </task>
     <task id="LOCAL-00001" summary="git init">
       <created>1679065430597</created>
@@ -445,7 +440,23 @@
       <option name="project" value="LOCAL" />
       <updated>1696145728346</updated>
     </task>
-    <option name="localTasksCounter" value="30" />
+    <task id="LOCAL-00030" summary="added user registration in the app">
+      <option name="closed" value="true" />
+      <created>1696158894317</created>
+      <option name="number" value="00030" />
+      <option name="presentableId" value="LOCAL-00030" />
+      <option name="project" value="LOCAL" />
+      <updated>1696158894317</updated>
+    </task>
+    <task id="LOCAL-00031" summary="added user registration in the app">
+      <option name="closed" value="true" />
+      <created>1696158924477</created>
+      <option name="number" value="00031" />
+      <option name="presentableId" value="LOCAL-00031" />
+      <option name="project" value="LOCAL" />
+      <updated>1696158924477</updated>
+    </task>
+    <option name="localTasksCounter" value="32" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -481,227 +492,7 @@
     <MESSAGE value="fixed a bug that returned a photo in a small resolution" />
     <MESSAGE value="added generation of links for downloading files from telegram" />
     <MESSAGE value="a microservice has been created to send emails from Java code" />
-    <option name="LAST_COMMIT_MESSAGE" value="a microservice has been created to send emails from Java code" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/dispatcher/src/main/java/ru/relex/controller/TelegramBot.java</url>
-          <line>45</line>
-          <option name="timeStamp" value="18" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/dispatcher/src/main/java/ru/relex/controller/UpdateController.java</url>
-          <line>39</line>
-          <option name="timeStamp" value="19" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/dispatcher/src/main/java/ru/relex/controller/UpdateController.java</url>
-          <line>56</line>
-          <option name="timeStamp" value="20" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/dispatcher/src/main/java/ru/relex/controller/UpdateController.java</url>
-          <line>69</line>
-          <option name="timeStamp" value="21" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/dispatcher/src/main/java/ru/relex/controller/UpdateController.java</url>
-          <line>73</line>
-          <option name="timeStamp" value="22" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/dispatcher/src/main/java/ru/relex/controller/UpdateController.java</url>
-          <line>78</line>
-          <option name="timeStamp" value="23" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/dispatcher/src/main/java/ru/relex/controller/UpdateController.java</url>
-          <line>83</line>
-          <option name="timeStamp" value="24" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/dispatcher/src/main/java/ru/relex/controller/UpdateController.java</url>
-          <line>89</line>
-          <option name="timeStamp" value="25" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/dispatcher/src/main/java/ru/relex/controller/UpdateController.java</url>
-          <line>95</line>
-          <option name="timeStamp" value="26" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/dispatcher/src/main/java/ru/relex/controller/TelegramBot.java</url>
-          <line>49</line>
-          <option name="timeStamp" value="27" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/dispatcher/src/main/java/ru/relex/utils/MessageUtils.java</url>
-          <line>13</line>
-          <option name="timeStamp" value="28" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/Node/src/main/java/ru/relex/service/impl/ConsumerServiceImpl.java</url>
-          <line>28</line>
-          <option name="timeStamp" value="29" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/Node/src/main/java/ru/relex/service/impl/ConsumerServiceImpl.java</url>
-          <line>35</line>
-          <option name="timeStamp" value="30" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/Node/src/main/java/ru/relex/service/impl/ConsumerServiceImpl.java</url>
-          <line>42</line>
-          <option name="timeStamp" value="31" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/Node/src/main/java/ru/relex/service/impl/MainServiceImpl.java</url>
-          <line>53</line>
-          <option name="timeStamp" value="32" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/Node/src/main/java/ru/relex/service/impl/ProducerServiceImpl.java</url>
-          <line>22</line>
-          <option name="timeStamp" value="33" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/dispatcher/src/main/java/ru/relex/service/impl/AnswerConsumerImpl.java</url>
-          <line>24</line>
-          <option name="timeStamp" value="34" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/dispatcher/src/main/java/ru/relex/service/impl/UpdateProducerImpl.java</url>
-          <line>22</line>
-          <option name="timeStamp" value="35" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/Node/src/main/java/ru/relex/service/impl/MainServiceImpl.java</url>
-          <line>76</line>
-          <option name="timeStamp" value="40" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/Node/src/main/java/ru/relex/service/impl/MainServiceImpl.java</url>
-          <line>82</line>
-          <option name="timeStamp" value="41" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/Node/src/main/java/ru/relex/service/impl/MainServiceImpl.java</url>
-          <line>103</line>
-          <option name="timeStamp" value="42" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/Node/src/main/java/ru/relex/service/impl/MainServiceImpl.java</url>
-          <line>171</line>
-          <option name="timeStamp" value="43" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/Node/src/main/java/ru/relex/service/impl/MainServiceImpl.java</url>
-          <line>95</line>
-          <option name="timeStamp" value="45" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/Node/src/main/java/ru/relex/service/impl/FileServiceImpl.java</url>
-          <line>133</line>
-          <option name="timeStamp" value="48" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/Node/src/main/java/ru/relex/service/enums/ServiceCommands.java</url>
-          <line>19</line>
-          <option name="timeStamp" value="52" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/Node/src/main/java/ru/relex/service/impl/MainServiceImpl.java</url>
-          <line>112</line>
-          <option name="timeStamp" value="54" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/Node/src/main/java/ru/relex/service/impl/MainServiceImpl.java</url>
-          <line>185</line>
-          <option name="timeStamp" value="55" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/Node/src/main/java/ru/relex/service/impl/MainServiceImpl.java</url>
-          <line>154</line>
-          <option name="timeStamp" value="56" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/Node/src/main/java/ru/relex/service/impl/MainServiceImpl.java</url>
-          <line>147</line>
-          <option name="timeStamp" value="57" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/Node/src/main/java/ru/relex/service/impl/MainServiceImpl.java</url>
-          <line>126</line>
-          <option name="timeStamp" value="58" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/Node/src/main/java/ru/relex/service/impl/FileServiceImpl.java</url>
-          <line>60</line>
-          <option name="timeStamp" value="59" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/Node/src/main/java/ru/relex/service/impl/FileServiceImpl.java</url>
-          <line>79</line>
-          <option name="timeStamp" value="61" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/Node/src/main/java/ru/relex/service/impl/FileServiceImpl.java</url>
-          <line>96</line>
-          <option name="timeStamp" value="62" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/Node/src/main/java/ru/relex/service/impl/FileServiceImpl.java</url>
-          <line>110</line>
-          <option name="timeStamp" value="63" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/Node/src/main/java/ru/relex/service/impl/FileServiceImpl.java</url>
-          <line>121</line>
-          <option name="timeStamp" value="64" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/Node/src/main/java/ru/relex/service/impl/FileServiceImpl.java</url>
-          <line>151</line>
-          <option name="timeStamp" value="65" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/Node/src/main/java/ru/relex/service/impl/FileServiceImpl.java</url>
-          <line>161</line>
-          <option name="timeStamp" value="66" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/Node/src/main/java/ru/relex/service/impl/FileServiceImpl.java</url>
-          <line>85</line>
-          <option name="timeStamp" value="67" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/rest-service/src/main/java/ru/relex/controller/FileController.java</url>
-          <line>28</line>
-          <option name="timeStamp" value="68" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/rest-service/src/main/java/ru/relex/controller/FileController.java</url>
-          <line>52</line>
-          <option name="timeStamp" value="69" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/mail-service/src/main/java/ru/relex/controller/MailController.java</url>
-          <line>24</line>
-          <option name="timeStamp" value="70" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/mail-service/src/main/java/ru/relex/service/impl/MailSenderServiceImpl.java</url>
-          <line>26</line>
-          <option name="timeStamp" value="73" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/mail-service/src/main/java/ru/relex/service/impl/MailSenderServiceImpl.java</url>
-          <line>40</line>
-          <option name="timeStamp" value="74" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
+    <MESSAGE value="added user registration in the app" />
+    <option name="LAST_COMMIT_MESSAGE" value="added user registration in the app" />
   </component>
 </project>
