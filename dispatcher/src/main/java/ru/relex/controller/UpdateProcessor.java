@@ -12,19 +12,19 @@ import ru.relex.utils.MessageUtils;
 import static ru.relex.model.RabbitQueue.*;
 
 /**
- * UpdateController распределяет входящие сообщения от тг бота.
+ * UpdateProcessor распределяет входящие сообщения от тг бота.
  * Т.к. планируется создать только 1 сервис, для разных типов сообщений
  * будет передаваться разный набор входящих параметров в этот сервис.
  */
 @Component
 @Log4j
-public class UpdateController {
+public class UpdateProcessor {
     private TelegramBot telegramBot;
     private final MessageUtils messageUtils;
     private final UpdateProducer updateProducer;
 
     @Autowired
-    public UpdateController(MessageUtils messageUtils, UpdateProducer updateProducer) {
+    public UpdateProcessor(MessageUtils messageUtils, UpdateProducer updateProducer) {
         this.messageUtils = messageUtils;
         this.updateProducer = updateProducer;
     }
