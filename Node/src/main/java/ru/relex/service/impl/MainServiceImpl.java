@@ -14,11 +14,14 @@ import ru.relex.entity.enums.UserState;
 import ru.relex.exceptions.UploadFileException;
 import ru.relex.repository.AppUserRepository;
 import ru.relex.repository.RawDataRepository;
+import ru.relex.service.AppUserService;
 import ru.relex.service.FileService;
 import ru.relex.service.MainService;
 import ru.relex.service.ProducerService;
 import ru.relex.service.enums.LinkType;
 import ru.relex.service.enums.ServiceCommands;
+
+import java.util.Optional;
 
 import static ru.relex.entity.enums.UserState.BASIC_STATE;
 import static ru.relex.entity.enums.UserState.WAIT_FOR_EMAIL_STATE;
@@ -31,16 +34,19 @@ public class MainServiceImpl implements MainService {
     private final ProducerService producerService;
     private final AppUserRepository appUserRepository;
     private final FileService fileService;
+    private final AppUserService appUserService;
 
     @Autowired
     public MainServiceImpl(RawDataRepository rawDataRepository,
                            ProducerService producerService,
                            AppUserRepository appUserRepository,
-                           FileService fileService) {
+                           FileService fileService,
+                           AppUserService appUserService) {
         this.rawDataRepository = rawDataRepository;
         this.producerService = producerService;
         this.appUserRepository = appUserRepository;
         this.fileService = fileService;
+        this.appUserService = appUserService;
     }
 
     @Override
@@ -49,7 +55,7 @@ public class MainServiceImpl implements MainService {
         AppUser appUser = findOrSaveAppUser(update);
         UserState userState = appUser.getState();
         String text = update.getMessage().getText();
-        String output = "";
+        String output;
 
         ServiceCommands serviceCommand = ServiceCommands.fromValue(text);
         if (CANCEL.equals(serviceCommand)) {
@@ -57,7 +63,7 @@ public class MainServiceImpl implements MainService {
         } else if (BASIC_STATE.equals(userState)) {
             output = processServiceCommand(appUser, text);
         } else if (WAIT_FOR_EMAIL_STATE.equals(userState)) {
-            //TODO добавить обработку емейла
+            output = appUserService.setEmail(appUser, text);
         } else {
             log.error("Unknown user state: " + userState);
             output = "Неизвестная ошибка! Введите /cancel и попробуйте снова!";
@@ -76,8 +82,7 @@ public class MainServiceImpl implements MainService {
     private String processServiceCommand(AppUser appUser, String cmd) {
         ServiceCommands serviceCommand = ServiceCommands.fromValue(cmd);
         if (REGISTRATION.equals(serviceCommand)) {
-            //TODO добавить регистрацию
-            return "Временно недоступно.";
+            return appUserService.registerUser(appUser);
         } else if (HELP.equals(serviceCommand)) {
             return help();
         } else if (START.equals(serviceCommand)) {
@@ -148,20 +153,19 @@ public class MainServiceImpl implements MainService {
 
     private AppUser findOrSaveAppUser(Update update) {
         User telegramUser = update.getMessage().getFrom();
-        AppUser persistentAppUser = appUserRepository.findAppUserByTelegramUserId(telegramUser.getId());
-        if (persistentAppUser == null) {
+        Optional<AppUser> optional = appUserRepository.findByTelegramUserId(telegramUser.getId());
+        if (optional.isEmpty()) {
             AppUser transientAppUser = AppUser.builder()
                     .telegramUserId(telegramUser.getId())
                     .username(telegramUser.getUserName())
                     .firstName(telegramUser.getFirstName())
                     .lastName(telegramUser.getLastName())
-                    //TODO изменить значение по умолчанию после добавления регистрации
-                    .isActive(true)
+                    .isActive(false)
                     .state(BASIC_STATE)
                     .build();
             return appUserRepository.save(transientAppUser);
         }
-        return persistentAppUser;
+        return optional.get();
     }
 
     private boolean isNotAllowToSendContent(Long chatId, AppUser appUser) {
